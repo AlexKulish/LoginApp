@@ -11,25 +11,46 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let welcomeVC = segue.destination as! WelcomeViewController
+        welcomeVC.welcomeMessage = "Welcome \(userNameTextField.text ?? "")!"
+        welcomeVC.emoji = "\u{1F44B}"
+    }
+    
     @IBAction func forgotUserNameButton() {
-        showAlert(title: "Ooops!", message: "Your name is Alexey")
-        
+        showAlert(title: "No problem!",
+                  message: "Your name is \"Geralt\" \u{1F609}")
     }
     
     @IBAction func forgotPasswordButton() {
-        showAlert(title: "Ooops!", message: "Your password is password")
-        
+        showAlert(title: "Ooops!",
+                  message: "Your password is \"plotva\" \u{1F434}")
     }
     
+    @IBAction func logInAction() {
+        let userName = userNameTextField.text
+        let password = passwordTextField.text
+        
+        if userName == "Geralt" && password == "plotva" {
+            performSegue(withIdentifier: "goToWelcomeVC", sender: self)
+        } else {
+            showAlert(title: "Wrong User Name or Password!",
+                      message: "Please, enter correct data \u{1F97A}")
+        }
+    }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
 }
+
+// MARK: - Setup alert
 
 extension LoginViewController {
     private func showAlert(title: String, message: String) {
@@ -43,3 +64,7 @@ extension LoginViewController {
         alert.addAction(actionOk)
     }
 }
+
+
+
+

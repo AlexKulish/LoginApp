@@ -45,8 +45,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
-        passwordTextField.text = ""
+        userNameTextField.text = nil
+        passwordTextField.text = nil
     }
 }
 
@@ -56,9 +56,8 @@ extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .default) { _ in
-            // удаляются сразу 2 текста, подумать как сделать чтобы удалялся только один
-            self.userNameTextField.text = ""
-            self.passwordTextField.text = ""
+            self.userNameTextField.text = nil
+            self.passwordTextField.text = nil
         }
         present(alert, animated: true)
         alert.addAction(actionOk)

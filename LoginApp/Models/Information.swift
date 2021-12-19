@@ -9,14 +9,19 @@ struct User {
     let person: Person
     
     static func getPerson() -> Person {
-        Person(login: "User",
-               password: "qwerty",
-               name: "Alexey Kulish",
-               age: 28,
-               university: "Moscow Automobile and Road Construction State Technical University",
-               education: "Master's Degree in Human Resources Management",
-               hobby: "Football",
-               prevJob: "Hello tech")
+        Person(
+            login: "Alex",
+            password: "qwerty",
+            name: "Alexey Kulish",
+            age: 28,
+            university: "Moscow Automobile and Road Construction State Technical University",
+            education: "Master's Degree in Human Resources Management",
+            hobbyOne: "Football ⚽️",
+            hobbyTwo: "Guitar 🎸",
+            hobbyThree: "PC games 🎮",
+            prevJob: "My previous job is Hello tech. IT Recruitment agency 🏆",
+            newInterest: "My new favourite interest is Swift! Swift! Swift! ❤️ "
+        )
     }
 }
 
@@ -27,6 +32,9 @@ struct Person {
     let age: Int
     let university: String
     let education: String
-    let hobby: String
+    let hobbyOne: String
+    let hobbyTwo: String
+    let hobbyThree: String
     let prevJob: String
+    let newInterest: String
 }

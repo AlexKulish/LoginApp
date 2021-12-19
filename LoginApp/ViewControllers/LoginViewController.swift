@@ -23,31 +23,32 @@ class LoginViewController: UIViewController {
                 welcomeVC.user = alex.name
             } else if let navigationVC = viewController as? UINavigationController {
                 let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                
                 aboutUserVC.title = alex.name
                 aboutUserVC.name = alex.name
                 aboutUserVC.age = alex.age
                 aboutUserVC.university = alex.university
                 aboutUserVC.education = alex.education
-            }
+            } 
         }
     }
     
     @IBAction func forgotUserNameButton() {
         showAlert(title: "No problem!",
-                  message: "Your login is \"\(alex.login)\" \u{1F609}",
+                  message: "Your login is \"\(alex.login)\" 😉",
                   textField: passwordTextField)
     }
     
     @IBAction func forgotPasswordButton() {
         showAlert(title: "Ooops!",
-                  message: "Your password is \"\(alex.password)\" \u{1F434}",
+                  message: "Your password is \"\(alex.password)\" 😎",
                   textField: passwordTextField)
     }
     
     @IBAction func logInAction() {
         if userNameTextField.text != alex.login || passwordTextField.text != alex.password {
             showAlert(title: "Wrong User Name or Password!",
-                      message: "Please, enter correct data \u{1F97A}",
+                      message: "Please, enter correct data 🥺",
                       textField: passwordTextField)
         }
     }

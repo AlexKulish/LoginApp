@@ -8,22 +8,26 @@
 import UIKit
 
 class MoreInfoViewController: UIViewController {
-
+    @IBOutlet var hobbyOneLabel: UILabel!
+    @IBOutlet var hobbyTwoLabel: UILabel!
+    @IBOutlet var hobbyThreeLabel: UILabel!
+    @IBOutlet var prevJobLabel: UILabel!
+    @IBOutlet var newInterestLabel: UILabel!
+    
+    var hobbyOne = ""
+    var hobbyTwo = ""
+    var hobbyThree = ""
+    var prevJob = ""
+    var newInterest = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        hobbyOneLabel.text = hobbyOne
+        hobbyTwoLabel.text = hobbyTwo
+        hobbyThreeLabel.text = hobbyThree
+        prevJobLabel.text = prevJob
+        newInterestLabel.text = newInterest
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

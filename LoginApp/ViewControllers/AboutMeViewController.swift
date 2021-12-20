@@ -14,30 +14,21 @@ class AboutMeViewController: UIViewController {
     @IBOutlet var educationLabel: UILabel!
     @IBOutlet var personImage: UIImageView!
     
-    private let alex = User.getPerson()
-    
-    var name = ""
-    var age = 0
-    var university = ""
-    var education = ""
+    var user: User!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let moreInfoVC = segue.destination as! MoreInfoViewController
         
-        moreInfoVC.hobbyOne = alex.hobbyOne
-        moreInfoVC.hobbyTwo = alex.hobbyTwo
-        moreInfoVC.hobbyThree = alex.hobbyThree
-        moreInfoVC.prevJob = alex.prevJob
-        moreInfoVC.newInterest = alex.newInterest
+        moreInfoVC.user = user
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = "Hello, my name is \(name) 👋🏼"
-        ageLabel.text = "I'm \(age) years old 👱🏼‍♂️"
-        universityLabel.text = "I graduated \(university) 👨🏼‍💻"
-        educationLabel.text = "My qualification is \(education) 👨🏼‍🎓"
+        nameLabel.text = "Hello, my name is \(user.person.name) 👋🏼"
+        ageLabel.text = "I'm \(user.person.age) years old 👱🏼‍♂️"
+        universityLabel.text = "I graduated \(user.person.university) 👨🏼‍💻"
+        educationLabel.text = "My qualification is \(user.person.education) 👨🏼‍🎓"
     }
     
     override func viewDidLayoutSubviews() {

@@ -6,12 +6,12 @@
 //
 
 struct User {
+    let login: String
+    let password: String
     let person: Person
     
-    static func getPerson() -> Person {
-        Person(
-            login: "Alex",
-            password: "qwerty",
+    static func getPerson() -> User {
+        User(login: "Alex", password: "qwerty", person: Person(
             name: "Alexey Kulish",
             age: 28,
             university: "Moscow Automobile and Road Construction State Technical University",
@@ -21,13 +21,13 @@ struct User {
             hobbyThree: "PC games 🎮",
             prevJob: "My previous job is Hello tech. IT Recruitment agency 🏆",
             newInterest: "My new favourite interest is Swift! Swift! Swift! ❤️ "
+            )
         )
     }
+    
 }
 
 struct Person {
-    let login: String
-    let password: String
     let name: String
     let age: Int
     let university: String

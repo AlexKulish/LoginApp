@@ -14,20 +14,16 @@ class MoreInfoViewController: UIViewController {
     @IBOutlet var prevJobLabel: UILabel!
     @IBOutlet var newInterestLabel: UILabel!
     
-    var hobbyOne = ""
-    var hobbyTwo = ""
-    var hobbyThree = ""
-    var prevJob = ""
-    var newInterest = ""
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hobbyOneLabel.text = hobbyOne
-        hobbyTwoLabel.text = hobbyTwo
-        hobbyThreeLabel.text = hobbyThree
-        prevJobLabel.text = prevJob
-        newInterestLabel.text = newInterest
+        hobbyOneLabel.text = user.person.hobbyOne
+        hobbyTwoLabel.text = user.person.hobbyTwo
+        hobbyThreeLabel.text = user.person.hobbyThree
+        prevJobLabel.text = user.person.prevJob
+        newInterestLabel.text = user.person.newInterest
     }
     
 }
